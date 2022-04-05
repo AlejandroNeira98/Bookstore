@@ -9,7 +9,7 @@ export default function reducer(state = [], action) {
       return state.map((book) => {
         if (book.id !== action.id) {
           return book;
-        } return;
+        } else { return };
       });
     default:
       return state;
