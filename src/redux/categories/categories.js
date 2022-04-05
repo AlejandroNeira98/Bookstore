@@ -1,6 +1,6 @@
 const CHECK_STATUS = 'bookstore/books/CHECK_STATUS';
 
-export default reducer( state = [], action ) {
+export default function reducer( state = [], action ) {
   switch(action.type){
     case CHECK_STATUS:
       return 'Under construction';

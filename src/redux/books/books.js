@@ -16,14 +16,14 @@ export default function reducer(state = [], action) {
   }
 }
 
-export function addBook(book){
+export function addBook(book) {
   return {
     type: ADD,
     book,
   }
 }
 
-export function removeBook(id){
+export function removeBook(id) {
   return {
     type: REMOVE,
     id,
