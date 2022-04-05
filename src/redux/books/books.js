@@ -6,11 +6,7 @@ export default function reducer(state = [], action) {
     case ADD:
       return [...state, action.book];
     case REMOVE:
-      return state.map((book) => {
-        if (book.id !== action.id) {
-          return book;
-        } else { return };
-      });
+      return state.filter(book => { book.id !== action.id });
     default:
       return state;
   }
