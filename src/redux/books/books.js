@@ -1,11 +1,12 @@
-import { v4 } from "uuid";
+import { v4 } from 'uuid';
+
 const ADD = 'bookstore/books/ADD';
 const REMOVE = 'bookstore/books/REMOVE';
 
 const defaultBooks = [
-    {id: v4(), author: 'George Martin', title: 'Game Of Thrones' },
-    {id: v4(), author: 'Mario Mendoza', title: 'Satanas'},
-  ];
+  { id: v4(), author: 'George Martin', title: 'Game Of Thrones' },
+  { id: v4(), author: 'Mario Mendoza', title: 'Satanas' },
+];
 
 export default function reducer(state = defaultBooks, action) {
   switch (action.type) {
