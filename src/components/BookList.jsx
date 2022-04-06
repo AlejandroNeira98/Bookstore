@@ -1,10 +1,12 @@
 import React from "react";
+import { shallowEqual, useSelector } from "react-redux";
 import BookItem from "./BookItem";
 
 const BookList = props => {
+  const books = useSelector((state) => state.books, shallowEqual);
   return(
     <div className='bookList'>
-      {props.bookList.map(book => (
+      {books(book => (
         <BookItem title={book.title} author={book.author} key={book.id} />
       ))}
     </div>
