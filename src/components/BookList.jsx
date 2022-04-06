@@ -7,7 +7,7 @@ const BookList = props => {
   return(
     <div className='bookList'>
       {books.map(book => (
-        <BookItem title={book.title} author={book.author} key={book.id} />
+        <BookItem title={book.title} author={book.author} key={book.id} id={book.id}/>
       ))}
     </div>
   )

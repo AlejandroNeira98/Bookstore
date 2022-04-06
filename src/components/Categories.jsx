@@ -3,9 +3,9 @@ import { useDispatch } from "react-redux";
 import { checkStatus } from '../redux/categories/categories';
 
 function Categories() {
-  const dispatch = () => useDispatch(checkStatus()); 
+  const dispatch = useDispatch(); 
   return(
-    <button onClick={ () => dispatch() }>Check Status</button>
+    <button onClick={ () => dispatch(checkStatus()) }>Check Status</button>
   )
 }
 

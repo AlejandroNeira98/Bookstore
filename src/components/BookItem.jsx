@@ -3,12 +3,12 @@ import { useDispatch } from "react-redux";
 import { removeBook } from '../redux/books/books'
 
 function BookItem(props) {
-  const dispatch = () => useDispatch(removeBook());
+  const dispatch = useDispatch();
   return(
     <div>
       <div className='Title'>Title: {props.title}</div>
       <div className='Author'>Author: {props.author}</div>
-      <button onClick={ () => dispatch() }>Remove</button>
+      <button onClick={ () => dispatch(removeBook(props.id)) }>Remove</button>
     </div>
   )
 }

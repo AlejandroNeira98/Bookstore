@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 function Form() {
   const [ title, setTitle ] = useState('');
   const [ author, setAuthor ] = useState('');
-
+  const dispatch = useDispatch()
   const getAuthorInput = (e) => {
     const Author = e.target.value;
     setAuthor(Author);
@@ -17,7 +17,7 @@ function Form() {
   };
   const dispatchBook = (e) => {
     e.preventDefault();
-    useDispatch(addBook({ title, author, id: v4() }))
+    dispatch(addBook({ title, author, id: v4() }));
   };
 
   return(
