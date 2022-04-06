@@ -6,7 +6,7 @@ const BookList = props => {
   const books = useSelector((state) => state.books, shallowEqual);
   return(
     <div className='bookList'>
-      {books(book => (
+      {books.map(book => (
         <BookItem title={book.title} author={book.author} key={book.id} />
       ))}
     </div>

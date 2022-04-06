@@ -23,9 +23,9 @@ function Form() {
   return(
     <form className='form'>
       <h3>ADD NEW BOOK</h3>
-      <input type='text' placeholder='Book Title' onChange={ () => getTitleInput() }> { title } </input>
-      <input type='text' placeholder='Book Author' onChange={ () => getAuthorInput() }> { author } </input>
-      <button type='submit' value='Submit' onClick={ () => dispatchBook() }/>
+      <input type='text' placeholder='Book Title' onChange={ (e) => getTitleInput(e) } value={ title } ></input>
+      <input type='text' placeholder='Book Author' onChange={ (e) => getAuthorInput(e) } value={ author } ></input>
+      <button type='submit' value='Submit' onClick={ (e) => dispatchBook(e) }/>
     </form>
   )
 }
