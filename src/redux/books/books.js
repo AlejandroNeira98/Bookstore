@@ -9,7 +9,7 @@ export default function reducer(state = [], action) {
     case ADD:
       return [...state, action.book];
     case REMOVE:
-      return state.filter((book) => book.id !== action.id);
+      return state.filter((book) => book.item_id !== action.item_id);
     case FETCH_BOOKLIST:
       const bookList = [];
       for (let item in action.data){
@@ -29,28 +29,23 @@ export function addBook(book) {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify({...book, item_id: book.id}),
+      body: JSON.stringify(book),
     }).then(() => dispatch({ type: ADD, book}))
   };
 }
 
-export function removeBook(id) {
+export function removeBook(item_id) {
   return async (dispatch) => {
-    await fetch(`${url}books/${id}`,{
+    await fetch(`${url}books/${item_id}`,{
       method: 'DELETE'
-    }).then(() => dispatch({type: REMOVE, id}))
+    }).then(() => dispatch({type: REMOVE, item_id}))
   };
 }
 
-export function fetchBooklist(data) {
-  return {
-    type: FETCH_BOOKLIST,
-    data,
-  };
-}
-
-export const getBookList = () => async (dispatch) => {
+export function getBookList () { 
+  return async (dispatch) => {
     await fetch (`${url}books`)
-      .then(response => response.json())
-      .then(data => dispatch(fetchBooklist(data)));
+      .then((response) => response.json())
+      .then((data) => dispatch({ type: FETCH_BOOKLIST, data }));
+  }
 }

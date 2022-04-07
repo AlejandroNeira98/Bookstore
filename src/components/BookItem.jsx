@@ -8,7 +8,7 @@ function BookItem(props) {
     <div>
       <div className='Title'>Title: {props.title}</div>
       <div className='Author'>Author: {props.author}</div>
-      <button onClick={ () => dispatch(removeBook(props.id)) }>Remove</button>
+      <button onClick={ () => dispatch(removeBook(props.item_id)) }>Remove</button>
     </div>
   )
 }

@@ -17,7 +17,7 @@ function Form() {
   };
   const dispatchBook = (e) => {
     e.preventDefault();
-    dispatch(addBook({ title, author, id: v4() }));
+    dispatch(addBook({ title, author, item_id: v4(), category: '' }));
   };
 
   return(
