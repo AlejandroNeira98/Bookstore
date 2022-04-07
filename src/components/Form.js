@@ -18,8 +18,10 @@ function Form() {
   };
   const dispatchBook = (e) => {
     e.preventDefault();
+    const id = v4();
+    console.log(id);
     dispatch(addBook({
-      title, author, item_id: v4(), category: '',
+      title, author, item_id: id, category: '',
     }));
   };
 
