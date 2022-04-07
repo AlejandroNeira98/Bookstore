@@ -2,22 +2,28 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { removeBook } from '../redux/books/books';
-import './Styles/BookItem.css';
+import styles from './Styles/BookItem.module.css';
 
 function BookItem(props) {
   const dispatch = useDispatch();
   const { title, item_id: itemId, author } = props;
   return (
-    <div>
-      <div className="Title">
+    <div className={styles.bookContainer}>
+      <div className={styles.title}>
         Title:
         {title}
       </div>
-      <div className="Author">
+      <div className={styles.author}>
         Author:
         {author}
       </div>
-      <button type="button" onClick={() => dispatch(removeBook(itemId))}>Remove</button>
+      <button
+        type="button"
+        onClick={() => dispatch(removeBook(itemId))}
+        className={styles.remove}
+      >
+        Remove
+      </button>
     </div>
   );
 }

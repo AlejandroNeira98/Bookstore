@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { v4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
+import styles from './Styles/Form.module.css';
 
 function Form() {
   const [title, setTitle] = useState('');
@@ -24,10 +25,10 @@ function Form() {
 
   return (
     <form className="form">
-      <h3>ADD NEW BOOK</h3>
-      <input type="text" placeholder="Book Title" onChange={(e) => getTitleInput(e)} value={title} />
-      <input type="text" placeholder="Book Author" onChange={(e) => getAuthorInput(e)} value={author} />
-      <button type="submit" value="Submit" onClick={(e) => dispatchBook(e)}> Submit </button>
+      <h3 className={styles.title}>ADD NEW BOOK</h3>
+      <input className={styles.input} type="text" placeholder="Book Title" onChange={(e) => getTitleInput(e)} value={title} />
+      <input className={styles.input} type="text" placeholder="Book Author" onChange={(e) => getAuthorInput(e)} value={author} />
+      <button className={styles.button} type="submit" value="Submit" onClick={(e) => dispatchBook(e)}> Submit </button>
     </form>
   );
 }

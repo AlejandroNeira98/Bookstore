@@ -1,10 +1,15 @@
-export const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/cztRrb2hdveZJBbq0L1F/';
+import { v4 } from 'uuid';
+
+export const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/BEevhAr1lMjnqIn8YMow/';
 
 const ADD = 'bookstore/books/ADD';
 const REMOVE = 'bookstore/books/REMOVE';
 const FETCH_BOOKLIST = 'bookstore/books/FETCH_BOOKLIST';
 
-export default function reducer(state = [], action) {
+export default function reducer(state = [
+  { item_id: v4(), author: 'George Martin', title: 'Game Of Thrones' },
+  { item_id: v4(), author: 'Mario Mendoza', title: 'Satanas' },
+], action) {
   const bookList = [];
   switch (action.type) {
     case ADD:

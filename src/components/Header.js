@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styles from './Styles/Header.module.css';
 
 function Header() {
   return (
-    <header>
-      <h1>BOOKSTORE CMS</h1>
-      <nav>
+    <header className={styles.header}>
+      <h1 className={styles.title}>BOOKSTORE CMS</h1>
+      <nav className={styles.nav}>
         <ul>
           <li>
-            <Link to="/">Books</Link>
+            <Link to="/" className={styles.link}>BOOKS</Link>
           </li>
           <li>
-            <Link to="/categories">Categories</Link>
+            <Link to="/categories" className={styles.link}>CATEGORIES</Link>
           </li>
         </ul>
       </nav>
