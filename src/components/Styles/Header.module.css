@@ -1,0 +1,28 @@
+.title,
+.link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.title {
+  color: #0290ff;
+  margin-left: 0%;
+}
+
+.link {
+  text-decoration: none;
+  color: #121212;
+}
+
+.header,
+.header > *,
+.header > * > *,
+.header > * > * > * {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  margin-left: 5%;
+}
