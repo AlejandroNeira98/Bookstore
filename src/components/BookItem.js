@@ -9,7 +9,7 @@ function BookItem(props) {
   const { title, item_id: itemId, author } = props;
   return (
     <div className={styles.bookContainer}>
-      <div>
+      <div className={styles.book}>
         <div className={styles.title}>
           Title:
           {title}
@@ -27,22 +27,24 @@ function BookItem(props) {
         </button>
       </div>
       <div className={styles.oval} />
-      <div>
+      <div className={styles.percentageContainer}>
         <div className={styles.percent}>
-          64%
+          100%
         </div>
         <div className={styles.Completed}>
           Completed
         </div>
       </div>
-      <div>
+      <div className={styles.upDateContainer}>
         <div className={styles.Current}>
           Current Chapter
         </div>
         <div className={styles.Chapter}>
           Chapter 17
         </div>
-        <div className={styles.Rectangle}>UPDATE PROGRESS </div>
+        <div className={styles.Rectangle}>
+          <span> UPDATE PROGRESS</span>
+        </div>
       </div>
     </div>
   );
