@@ -1,4 +1,4 @@
-export const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/XkXVQhw7HPfgr1FeXVzX/';
+export const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/3jla0SR9emN3gKgXqoCm/';
 
 const ADD = 'bookstore/books/ADD';
 const REMOVE = 'bookstore/books/REMOVE';
@@ -12,8 +12,8 @@ export default function reducer(state = [], action) {
     case REMOVE:
       return state.filter((book) => book.item_id !== action.item_id);
     case FETCH_BOOKLIST:
-      Object.values(action.data).forEach((item) => {
-        bookList.push(item[0]);
+      Object.keys(action.data).forEach((key) => {
+        bookList.push({ ...action.data[key][0], item_id: key });
       });
       return bookList;
     default:
@@ -46,6 +46,9 @@ export function getBookList() {
   return async (dispatch) => {
     await fetch(`${url}books`)
       .then((response) => response.json())
-      .then((data) => dispatch({ type: FETCH_BOOKLIST, data }));
+      .then((data) => {
+        dispatch({ type: FETCH_BOOKLIST, data });
+        console.log(data);
+      });
   };
 }
