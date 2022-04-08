@@ -26,11 +26,11 @@ function Form() {
   };
 
   return (
-    <form className="form">
+    <form className={styles.form}>
       <h3 className={styles.title}>ADD NEW BOOK</h3>
       <input className={styles.input} type="text" placeholder="Book Title" onChange={(e) => getTitleInput(e)} value={title} />
       <input className={styles.input} type="text" placeholder="Book Author" onChange={(e) => getAuthorInput(e)} value={author} />
-      <button className={styles.button} type="submit" value="Submit" onClick={(e) => dispatchBook(e)}> Submit </button>
+      <button className={styles.button} type="submit" value="Submit" onClick={(e) => dispatchBook(e)}> ADD BOOK </button>
     </form>
   );
 }

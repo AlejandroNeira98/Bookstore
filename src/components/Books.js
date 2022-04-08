@@ -1,9 +1,10 @@
 import React from 'react';
 import BookList from './BookList';
 import Form from './Form';
+import styles from './Styles/Books.module.css';
 
 const Books = () => (
-  <div>
+  <div className={styles.center}>
     <BookList />
     <Form />
   </div>

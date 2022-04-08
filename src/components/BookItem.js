@@ -9,21 +9,41 @@ function BookItem(props) {
   const { title, item_id: itemId, author } = props;
   return (
     <div className={styles.bookContainer}>
-      <div className={styles.title}>
-        Title:
-        {title}
+      <div>
+        <div className={styles.title}>
+          Title:
+          {title}
+        </div>
+        <div className={styles.author}>
+          Author:
+          {author}
+        </div>
+        <button
+          type="button"
+          onClick={() => dispatch(removeBook(itemId))}
+          className={styles.remove}
+        >
+          Remove
+        </button>
       </div>
-      <div className={styles.author}>
-        Author:
-        {author}
+      <div className={styles.oval} />
+      <div>
+        <div className={styles.percent}>
+          64%
+        </div>
+        <div className={styles.Completed}>
+          Completed
+        </div>
       </div>
-      <button
-        type="button"
-        onClick={() => dispatch(removeBook(itemId))}
-        className={styles.remove}
-      >
-        Remove
-      </button>
+      <div>
+        <div className={styles.Current}>
+          Current Chapter
+        </div>
+        <div className={styles.Chapter}>
+          Chapter 17
+        </div>
+        <div className={styles.Rectangle}>UPDATE PROGRESS </div>
+      </div>
     </div>
   );
 }
